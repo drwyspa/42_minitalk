@@ -5,25 +5,27 @@
 #                                                     +:+ +:+         +:+      #
 #    By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/16 13:30:21 by pjedrycz          #+#    #+#              #
-#    Updated: 2024/07/31 22:14:40 by pjedrycz         ###   ########.fr        #
+#    Created: 2024/04/30 19:43:45 by pjedrycz          #+#    #+#              #
+#    Updated: 2024/04/30 19:57:09 by pjedrycz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
-					ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
-					ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c \
-					ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
-					ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
-					ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
-					ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
-OBJS		=	$(SRCS:.c=.o)
+SRCS	=	ft_printf_utils.c 	\
+			ft_printf.c 		\
+			ft_putchar.c 		\
+			ft_puthex.c 		\
+			ft_putnbr.c 		\
+			ft_putptr.c 		\
+			ft_putstr.c 		\
+			ft_putuint.c
 
-CC				= gcc
-RM				= rm -f
+OBJS	=	$(SRCS:.c=.o)
+
+CC			= gcc
+RM			= rm -rf
 CFLAGS		= -Wall -Wextra -Werror
 
-NAME		= libft.a
+NAME		= libftprintf.a
 
 all:		$(NAME)
 
@@ -39,3 +41,4 @@ fclean:		clean
 re:				fclean $(NAME)
 
 .PHONY:		all clean fclean re
+	

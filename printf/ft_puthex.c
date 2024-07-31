@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/30 21:50:14 by pjedrycz          #+#    #+#             */
-/*   Updated: 2024/07/31 21:54:59 by pjedrycz         ###   ########.fr       */
+/*   Created: 2024/04/30 18:07:39 by pjedrycz          #+#    #+#             */
+/*   Updated: 2024/04/30 19:59:30 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdio.h>
-# include <signal.h>
-# include "libft.h"
-# include "ft_printf.h"
+#include "ft_printf.h"
+#include <stddef.h>
 
-#endif
+// Write in hex
+void	ft_puthex(unsigned int num, size_t *count, char *base)
+{
+	char	*str;
+
+	str = ft_util(num, base);
+	ft_putstr(str, count);
+	free(str);
+}

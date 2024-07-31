@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_putuint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/30 21:50:14 by pjedrycz          #+#    #+#             */
-/*   Updated: 2024/07/31 21:54:59 by pjedrycz         ###   ########.fr       */
+/*   Created: 2024/04/30 19:18:43 by pjedrycz          #+#    #+#             */
+/*   Updated: 2024/04/30 19:59:26 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdio.h>
-# include <signal.h>
-# include "libft.h"
-# include "ft_printf.h"
+#include "ft_printf.h"
+#include <stddef.h>
 
-#endif
+// Write unsigned int
+void	ft_putuint(unsigned int n, size_t *count)
+{
+	char	*str;
+
+	str = ft_util(n, "0123456789");
+	ft_putstr(str, count);
+	free(str);
+}
