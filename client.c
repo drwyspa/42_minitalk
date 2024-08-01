@@ -6,7 +6,7 @@
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 21:12:13 by pjedrycz          #+#    #+#             */
-/*   Updated: 2024/07/31 21:38:35 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2024/08/01 21:15:34 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 //Client module - here user will input a message.
 //This function takes signals from main and send as a bits, to the server.
+//Bit 0 as SIGUSR1 and 1 as a SIGUSR2
 void	send_signals(int pid, char *msg)
 {
 	int	letter;
